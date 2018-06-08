@@ -23,24 +23,10 @@ public class p02_StudentsByFirstLastName {
             text = reader.readLine();
         }
 
-        //Collections.sort(list);
-        List<String> someList = new ArrayList<>();
-
-        for (int i = 0; i < list.size(); i++) {
-
-            String temporary = list.get(i);
-
-            someList = Arrays.stream(temporary.split(" "))
-                    .filter(x -> {
-                        String[] splitTemporary = temporary.split(" ");
-                        char first = splitTemporary[0].charAt(0);
-                        char second = splitTemporary[1].charAt(0);
-                        return first < second;
-                    }).collect(Collectors.toList());
-        }
-
-        someList.forEach(z -> System.out.print(z + " "));
+        list.stream()
+                .filter(s -> (s != null && !s.isEmpty()))
+                .filter(s -> s.split("\\s+")[0].compareTo(s.split("\\s+")[1]) < 0)
+                .forEach(System.out::println);
 
     }
 }
-
