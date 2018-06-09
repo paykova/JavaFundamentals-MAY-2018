@@ -42,8 +42,9 @@ public class p04_MaxSum {
             maxSum =0;
 
         }
-        System.out.println(index1);
-        System.out.println(index2);
+       // System.out.println(index1);
+        //System.out.println(index2);
+        //System.out.println(matrix[index1][index2]);
         System.out.println( "Sum = " + sum);
         //System.out.println(index1 + " " + index2);
 //        for (int[] ints : matrix) {
@@ -54,8 +55,8 @@ public class p04_MaxSum {
 //        }
 
 
-        for (int i = index1; i <=3 ; i++) {
-            for (int j = index2; j <= 3; j++) {
+        for (int i = index1; i <index1 +3 ; i++) {
+            for (int j = index2; j <index2 +3; j++) {
                 System.out.print(matrix[i][j] + " ");
             }
             System.out.println();
