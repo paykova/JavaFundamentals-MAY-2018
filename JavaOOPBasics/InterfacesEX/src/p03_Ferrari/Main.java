@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) throws IOException, IllegalClassFormatException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 
-       String driverName = reader.readLine();
+        String driverName = reader.readLine();
 
         Car ferrari = new Ferrari(driverName);
 
