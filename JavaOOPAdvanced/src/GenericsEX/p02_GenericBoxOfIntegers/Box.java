@@ -1,0 +1,16 @@
+package GenericsEX.p02_GenericBoxOfIntegers;
+
+public class Box <T extends Number> {
+
+    private T value;
+
+    public Box(T value) {
+        this.value = value;
+    }
+
+
+    @Override
+    public String toString() {
+        return String.format("%s: %s", this.value.getClass().getName(), this.value);
+    }
+}
