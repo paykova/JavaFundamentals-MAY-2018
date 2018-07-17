@@ -1,4 +1,4 @@
-package GenericsEX.p03_GenericSwapMethodStrings;
+package p04_GenericSwapMethodInt;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,30 +10,27 @@ import static java.lang.System.in;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-
         BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-        List<Box<String>> boxes = new ArrayList<>();
 
         int n = Integer.parseInt(reader.readLine());
+        List<Box> list = new ArrayList<>();
 
         for (int i = 0; i <n ; i++) {
-            String input = reader.readLine();
-            boxes.add(new Box<>(input));
+            int line = Integer.parseInt(reader.readLine());
+            list.add(new Box(line));
         }
 
-        String[] indexes = reader.readLine().split("\\s+");
+        String[] swapLine = reader.readLine().split(" ");
+        int first = Integer.parseInt(swapLine[0]);
+        int second = Integer.parseInt(swapLine[1]);
 
-        int first = Integer.parseInt(indexes[0]);
-        int second = Integer.parseInt(indexes[1]);
+        Box<Integer> temp = list.get(first);
+        list.set(first, list.get(second));
+        list.set(second, temp);
 
 
-        Box<String> temp = boxes.get(first);
-        boxes.set(first, boxes.get(second));
-        boxes.set(second, temp);
-
-        for (Box<String> box : boxes) {
+        for (Box box : list) {
             System.out.println(box.toString());
         }
-
     }
 }

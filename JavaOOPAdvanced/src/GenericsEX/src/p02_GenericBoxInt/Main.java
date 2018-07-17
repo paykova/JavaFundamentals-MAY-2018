@@ -1,4 +1,4 @@
-package GenericsEX.p02_GenericBoxOfIntegers;
+package p02_GenericBoxInt;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,15 +13,16 @@ public class Main {
         BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 
         int n = Integer.parseInt(reader.readLine());
+        List<Box> list = new ArrayList<>();
 
-        List<Box<Integer>> boxes = new ArrayList<>();
-        String[] elements = new String[n];
 
         for (int i = 0; i <n ; i++) {
-            elements[i] = reader.readLine();
-            Integer input = Integer.parseInt(elements[i]);
-            boxes.add(new Box<>(input));
+            int line = Integer.parseInt(reader.readLine());
+            list.add(new Box(line));
         }
-        boxes.forEach(System.out::println);
+
+        for (Box box : list) {
+            System.out.println(box.toString());
+        }
     }
 }
